@@ -1,54 +1,54 @@
-﻿Function Start-WindowsUpdate {
+Function Start-WindowsUpdate {
     <#
     .SYNOPSIS
-		The Install-WindowsUpdate function remotely starts the Install-WindowsUpdate function and returns a "start" object (See outputs below).
-		
+        The Install-WindowsUpdate function remotely starts the Install-WindowsUpdate function and returns a "start" object (See outputs below).
+        
     .DESCRIPTION
-		The Install-WindowsUpdate function remotely starts the Install-WindowsUpdate function and returns a "start" object (See outputs below).
-		
+        The Install-WindowsUpdate function remotely starts the Install-WindowsUpdate function and returns a "start" object (See outputs below).
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER AutoReboot
         Automatically reboots the system if a update requires it.
-		
+        
     .PARAMETER AutoRun
         Automatically runs the Install-WindowsUpdate function on startup.
-		
+        
     .PARAMETER AutoLogin
         Automatically logs into the system after a reboot.
-		
+        
     .PARAMETER IncludeRecommended
         Forces recommended (optional) updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeDriver
         Forces driver updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeHidden
         Forces hidden updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER Id
         A variable used to group runs and query status information about them.
-		
+        
     .PARAMETER VariableName
         Mostly used for testing.
-		
+        
     .PARAMETER ShellType
         Mostly used for testing.
-		
+        
     .PARAMETER ShellNoExit
         Mostly used for testing.
-		
+        
     .PARAMETER AsJob
-		Runs the function as a job.
-		
-	.OUTPUTS
+        Runs the function as a job.
+        
+    .OUTPUTS
         Returns a "start" object containing:
         -------------------------------------------------------------------------------
         #            : Just a counter for convience.
@@ -56,47 +56,47 @@
         Result       : Contains "Succeeded" if the Install-WindowsUpdate function was successfully started. Contains "Failed" if wasn't.
         -------------------------------------------------------------------------------
 
-	.EXAMPLE
-		Start-WindowsUpdate -ComputerName $computerName -Credential $credential -AutoReboot -AutoRun -AutoLogin
-		
-		After the proceeding command is executed, the process would be as follows:
-		
-		01) The Start-WindowsUpdate function starts.
-		02) The Start-WindowsUpdate function confirms the computers are online.
-		03) The Start-WindowsUpdate function creates a remote session on each of the computers.
-		04) In the remote session, the Start-WindowsUpdate function outputs the Install-WindowsUpdate function to the root of C: drive.
-		05) In the remote session, the Start-WindowsUpdate function creates a temporary scheduled task to launch the outputted Install-WindowsUpdate function.
-		06) In the remote session, the Start-WindowsUpdate function starts the Install-WindowsUpdate function via the scheduled task.
-		07) In the remote session, the Start-WindowsUpdate deletes the scheduled task.
-		08) The Install-WindowsUpdate function is now running locally as a completely separate process.
-		09) The Start-WindowsUpdate function returns a "start" object (defined above in the outputs).
-		10) The Start-WindowsUpdate function is complete.
-		11) The Install-WindowsUpdate function checks if important windows updates are available.
-		12) The Install-WindowsUpdate function installs all important windows updates.
-		13) The Install-WindowsUpdate function reboots the system (if required). # -AutoReboot
-		14) The user is automatically logged in. # -AutoLogin
-		15) The Install-WindowsUpdate function is started again. # -AutoRun
-		16) The loop continues until all windows updates are complete.
-		17) he Install-WindowsUpdate function is complete.
-		
-	.EXAMPLE
-		Start-WindowsUpdate -ComputerName $computerName -Credential $credential 
-		
-		After the proceeding command is executed, the process would be as follows:
-		
-		01) The Start-WindowsUpdate function starts.
-		02) The Start-WindowsUpdate function confirms the computers are online.
-		03) The Start-WindowsUpdate function creates a remote session on each of the computers.
-		04) In the remote session, the Start-WindowsUpdate function outputs the Install-WindowsUpdate function to the root of C: drive.
-		05) In the remote session, the Start-WindowsUpdate function creates a temporary scheduled task to launch the outputted Install-WindowsUpdate function.
-		06) In the remote session, the Start-WindowsUpdate function starts the Install-WindowsUpdate function via the scheduled task.
-		07) In the remote session, the Start-WindowsUpdate deletes the scheduled task.
-		08) The Install-WindowsUpdate function is now running locally as a completely separate process.
-		09) The Start-WindowsUpdate function returns a "start" object (defined above in the outputs).
-		10) The Start-WindowsUpdate function is complete.
-		11) The Install-WindowsUpdate function checks if important windows updates are available.
-		12) The Install-WindowsUpdate function installs all important windows updates.
-		13) The Install-WindowsUpdate function is complete.
+    .EXAMPLE
+        Start-WindowsUpdate -ComputerName $computerName -Credential $credential -AutoReboot -AutoRun -AutoLogin
+        
+        After the proceeding command is executed, the process would be as follows:
+        
+        01) The Start-WindowsUpdate function starts.
+        02) The Start-WindowsUpdate function confirms the computers are online.
+        03) The Start-WindowsUpdate function creates a remote session on each of the computers.
+        04) In the remote session, the Start-WindowsUpdate function outputs the Install-WindowsUpdate function to the root of C: drive.
+        05) In the remote session, the Start-WindowsUpdate function creates a temporary scheduled task to launch the outputted Install-WindowsUpdate function.
+        06) In the remote session, the Start-WindowsUpdate function starts the Install-WindowsUpdate function via the scheduled task.
+        07) In the remote session, the Start-WindowsUpdate deletes the scheduled task.
+        08) The Install-WindowsUpdate function is now running locally as a completely separate process.
+        09) The Start-WindowsUpdate function returns a "start" object (defined above in the outputs).
+        10) The Start-WindowsUpdate function is complete.
+        11) The Install-WindowsUpdate function checks if important windows updates are available.
+        12) The Install-WindowsUpdate function installs all important windows updates.
+        13) The Install-WindowsUpdate function reboots the system (if required). # -AutoReboot
+        14) The user is automatically logged in. # -AutoLogin
+        15) The Install-WindowsUpdate function is started again. # -AutoRun
+        16) The loop continues until all windows updates are complete.
+        17) he Install-WindowsUpdate function is complete.
+        
+    .EXAMPLE
+        Start-WindowsUpdate -ComputerName $computerName -Credential $credential 
+        
+        After the proceeding command is executed, the process would be as follows:
+        
+        01) The Start-WindowsUpdate function starts.
+        02) The Start-WindowsUpdate function confirms the computers are online.
+        03) The Start-WindowsUpdate function creates a remote session on each of the computers.
+        04) In the remote session, the Start-WindowsUpdate function outputs the Install-WindowsUpdate function to the root of C: drive.
+        05) In the remote session, the Start-WindowsUpdate function creates a temporary scheduled task to launch the outputted Install-WindowsUpdate function.
+        06) In the remote session, the Start-WindowsUpdate function starts the Install-WindowsUpdate function via the scheduled task.
+        07) In the remote session, the Start-WindowsUpdate deletes the scheduled task.
+        08) The Install-WindowsUpdate function is now running locally as a completely separate process.
+        09) The Start-WindowsUpdate function returns a "start" object (defined above in the outputs).
+        10) The Start-WindowsUpdate function is complete.
+        11) The Install-WindowsUpdate function checks if important windows updates are available.
+        12) The Install-WindowsUpdate function installs all important windows updates.
+        13) The Install-WindowsUpdate function is complete.
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -265,7 +265,7 @@
                     $functionInstallWindowsUpdate
                 )
                 $param.ScriptBlock = {
-					
+                    
                     # Set variables.
                     $VerbosePreference = $args[0]
                     $command = $args[1]
@@ -641,141 +641,141 @@ Function Install-WindowsUpdate {
     <#
     .SYNOPSIS
         The Install-WindowsUpdate function installs windows updates.
-		
-		Each execution of the Install-WindowsUpdate function generates a "run" object which is stored locally in program data as xml files.  They can be queried anytime during or after the run by using the associated Id with the Get-WindowsUpdateStatus function.
-		
+        
+        Each execution of the Install-WindowsUpdate function generates a "run" object which is stored locally in program data as xml files.  They can be queried anytime during or after the run by using the associated Id with the Get-WindowsUpdateStatus function.
+        
     .DESCRIPTION
         The Install-WindowsUpdate function installs windows updates.
-		
-		Each execution of the Install-WindowsUpdate function generates a "run" object which is stored locally in program data as xml files.  They can be queried anytime during or after the run by using the associated Id with the Get-WindowsUpdateStatus function.
+        
+        Each execution of the Install-WindowsUpdate function generates a "run" object which is stored locally in program data as xml files.  They can be queried anytime during or after the run by using the associated Id with the Get-WindowsUpdateStatus function.
 
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
 
     .PARAMETER AutoReboot
         Automatically reboots the system if a update requires it.
-		
+        
     .PARAMETER AutoRun
         Automatically runs the Install-WindowsUpdate function on startup.
-		
+        
     .PARAMETER AutoLogin
         Automatically logs into the system after a reboot.
-		
+        
     .PARAMETER IncludeRecommended
         Forces recommended (optional) updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeDriver
         Forces driver updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeHidden
         Forces hidden updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER Id
         A variable used to group runs and query status information about them.
-		
+        
     .PARAMETER VariableName
         Mostly used for testing.
-		
-	.OUTPUTS
-		Returns a "run" object. There are a lot of nested objects and properties so it is probably best to explore them for yourself.
-		
-		Regardless, here is an example "run" object. The indented properties are nested objects.
-		-------------------------------------------------------------------------------
-		ComputerName   : mycomputer.domain.com
-		Number         : 1
-		Version        : 1
-		FreeSpaceGB    : 184.76
-		Domain         : domain.com
-		OS             : Windows Server 2019 Datacenter
-		PSVersion      : 5.1.14409.1018
-		UpdateRetryRun : False
-		UpdateCount    : 9
-		StopFile       : False
-		State          : Complete
-		Result         : Succeeded
-		Reboot         : True
-		Start          : 2/21/2020 9:08:20 AM
-		End            : 2/21/2020 9:17:00 AM
-		Duration       : 00:08:39.1725551
-		
-		Parameter      : 
-		--------------------------
-			Id                 : 20200221
-			Credential         : domain\administrator
-			AutoReboot         : False
-			AutoRun            : False
-			AutoLogin          : False
-			IncludeRecommended : False
-			IncludeDriver      : False
-			IncludeHidden      : False
-			VariableName       : windowsUpdate
+        
+    .OUTPUTS
+        Returns a "run" object. There are a lot of nested objects and properties so it is probably best to explore them for yourself.
+        
+        Regardless, here is an example "run" object. The indented properties are nested objects.
+        -------------------------------------------------------------------------------
+        ComputerName   : mycomputer.domain.com
+        Number         : 1
+        Version        : 1
+        FreeSpaceGB    : 184.76
+        Domain         : domain.com
+        OS             : Windows Server 2019 Datacenter
+        PSVersion      : 5.1.14409.1018
+        UpdateRetryRun : False
+        UpdateCount    : 9
+        StopFile       : False
+        State          : Complete
+        Result         : Succeeded
+        Reboot         : True
+        Start          : 2/21/2020 9:08:20 AM
+        End            : 2/21/2020 9:17:00 AM
+        Duration       : 00:08:39.1725551
+        
+        Parameter      : 
+        --------------------------
+            Id                 : 20200221
+            Credential         : domain\administrator
+            AutoReboot         : False
+            AutoRun            : False
+            AutoLogin          : False
+            IncludeRecommended : False
+            IncludeDriver      : False
+            IncludeHidden      : False
+            VariableName       : windowsUpdate
 
-		Update         : 
-		--------------------------
-			Title    : 2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for x64-based systems
-			Number   : 9
-			SizeMB   : 55.03
-			Category : Security Updates
-			Severity : Moderate
-			KB       : 4537767
-			Bulletin :
-			
-			Download : 
-			--------------------------
-				Result   : @{Code=2; Description=Succeeded}
-				HResult  : @{Code=0; Hexadecimal=0x0; Message=Succeeded; Description=The Operation succeeded.; Mitigation=}
-				State    : Complete
-				Start    : 2/21/2020 9:15:34 AM
-				End      : 2/21/2020 9:15:34 AM
-				Duration : 00:00:00.3437542
-				
-			Install  : 
-			--------------------------
-				Result   : @{Code=2; Description=Succeeded}
-				HResult  : @{Code=0; Hexadecimal=0x0; Message=Succeeded; Description=The Operation succeeded.; Mitigation=}
-				State    : Complete
-				Start    : 2/21/2020 9:15:34 AM
-				End      : 2/21/2020 9:16:14 AM
-				Duration : 00:00:39.8598754
-				
-			Percent  : 100
-			State    : Complete
-			Result   : Succeeded
-			Reboot   : True
-			Start    : 2/21/2020 9:16:14 AM
-			End      : 2/21/2020 9:17:00 AM
-			Duration : 00:00:45.5318690
+        Update         : 
+        --------------------------
+            Title    : 2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for x64-based systems
+            Number   : 9
+            SizeMB   : 55.03
+            Category : Security Updates
+            Severity : Moderate
+            KB       : 4537767
+            Bulletin :
+            
+            Download : 
+            --------------------------
+                Result   : @{Code=2; Description=Succeeded}
+                HResult  : @{Code=0; Hexadecimal=0x0; Message=Succeeded; Description=The Operation succeeded.; Mitigation=}
+                State    : Complete
+                Start    : 2/21/2020 9:15:34 AM
+                End      : 2/21/2020 9:15:34 AM
+                Duration : 00:00:00.3437542
+                
+            Install  : 
+            --------------------------
+                Result   : @{Code=2; Description=Succeeded}
+                HResult  : @{Code=0; Hexadecimal=0x0; Message=Succeeded; Description=The Operation succeeded.; Mitigation=}
+                State    : Complete
+                Start    : 2/21/2020 9:15:34 AM
+                End      : 2/21/2020 9:16:14 AM
+                Duration : 00:00:39.8598754
+                
+            Percent  : 100
+            State    : Complete
+            Result   : Succeeded
+            Reboot   : True
+            Start    : 2/21/2020 9:16:14 AM
+            End      : 2/21/2020 9:17:00 AM
+            Duration : 00:00:45.5318690
 
-		Status         : 
-		--------------------------
-			Message : Download '2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for
-					  x64-based systems (KB4537767)' completed with status 'Succeeded' in 1 Second.
-			Code    : 1
-			Step    : 7
-			Update  : @{Title=2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for x64-based
-					  systems; Number=9; SizeMB=55.03; Category=Security Updates; Severity=Moderate; KB=4537767; Bulletin=;
-					  Download=; Install=; Percent=100; State=Complete; Result=Succeeded; Reboot=True; Start=2/21/2020 9:16:14 AM;
-					  End=2/21/2020 9:17:00 AM; Duration=00:00:45.5318690}
-	
-	-------------------------------------------------------------------------------
-	
-	.EXAMPLE
-		Install-WindowsUpdate -Credential $credential -AutoReboot -AutoRun -AutoLogin
-		
-		01) The Install-WindowsUpdate function checks if important windows updates are available.
-		02) The Install-WindowsUpdate function installs all important windows updates.
-		03) The Install-WindowsUpdate function reboots the system (if required). # -AutoReboot
-		04) The user is automatically logged in. # -AutoLogin
-		05) The Install-WindowsUpdate function is started again. # -AutoRun
-		06) The loop continues until all windows updates are complete.
-		07) The Install-WindowsUpdate function is complete.
-		
-	.EXAMPLE
-		Install-WindowsUpdate
-		
-		01) The Install-WindowsUpdate function checks if important windows updates are available.
-		02) The Install-WindowsUpdate function installs all important windows updates.
-		03) The Install-WindowsUpdate function is complete.
+        Status         : 
+        --------------------------
+            Message : Download '2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for
+                      x64-based systems (KB4537767)' completed with status 'Succeeded' in 1 Second.
+            Code    : 1
+            Step    : 7
+            Update  : @{Title=2020-02 Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 for x64-based
+                      systems; Number=9; SizeMB=55.03; Category=Security Updates; Severity=Moderate; KB=4537767; Bulletin=;
+                      Download=; Install=; Percent=100; State=Complete; Result=Succeeded; Reboot=True; Start=2/21/2020 9:16:14 AM;
+                      End=2/21/2020 9:17:00 AM; Duration=00:00:45.5318690}
+    
+    -------------------------------------------------------------------------------
+    
+    .EXAMPLE
+        Install-WindowsUpdate -Credential $credential -AutoReboot -AutoRun -AutoLogin
+        
+        01) The Install-WindowsUpdate function checks if important windows updates are available.
+        02) The Install-WindowsUpdate function installs all important windows updates.
+        03) The Install-WindowsUpdate function reboots the system (if required). # -AutoReboot
+        04) The user is automatically logged in. # -AutoLogin
+        05) The Install-WindowsUpdate function is started again. # -AutoRun
+        06) The loop continues until all windows updates are complete.
+        07) The Install-WindowsUpdate function is complete.
+        
+    .EXAMPLE
+        Install-WindowsUpdate
+        
+        01) The Install-WindowsUpdate function checks if important windows updates are available.
+        02) The Install-WindowsUpdate function installs all important windows updates.
+        03) The Install-WindowsUpdate function is complete.
     #>
     [CmdletBinding()]
     param(
@@ -1786,7 +1786,7 @@ Function Install-WindowsUpdate {
                 # Set script download.
                 $scriptDownload = $true
 
-	            # Install update.
+                # Install update.
                 # ##############################################################
                 if ($updateObject.Download.Result.Code -eq 2 -and $updateObject.Download.HResult.Code -eq 0) {
 
@@ -2440,35 +2440,35 @@ Function Get-WindowsUpdate {
     <#
     .SYNOPSIS
         The Get-WindowsUpdate function queries windows updates available on a remote system. The "update" objects are returned in a container for convenience (See outputs below).
-		
-	.DESCRIPTION
-		The Get-WindowsUpdate function queries windows updates available on a remote system. The "update" objects are returned in a container for convenience (See outputs below).
-		
+        
+    .DESCRIPTION
+        The Get-WindowsUpdate function queries windows updates available on a remote system. The "update" objects are returned in a container for convenience (See outputs below).
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER IncludeRecommended
         Forces recommended (optional) updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeDriver
         Forces driver updates to be installed. By default, only important updates are installed.
-		
+        
     .PARAMETER IncludeHidden
         Forces hidden updates to be installed. By default, only important updates are installed.
-	
-	.PARAMETER Timeout
-		...
-	
-	.PARAMETER AsJob
-		Runs the function as a job.
-		
-	.OUTPUTS
+    
+    .PARAMETER Timeout
+        ...
+    
+    .PARAMETER AsJob
+        Runs the function as a job.
+        
+    .OUTPUTS
         Returns an "update" object container containing:
         -------------------------------------------------------------------------------
         #            : Just a counter for convience.
@@ -2477,10 +2477,10 @@ Function Get-WindowsUpdate {
         UpdateCount  : The number of update objects.
         Update       : Update objects.
         -------------------------------------------------------------------------------
-		
-	.EXAMPLE
-		Get-WindowsUpdate -ComputerName $computerName -Credential $credential
-		
+        
+    .EXAMPLE
+        Get-WindowsUpdate -ComputerName $computerName -Credential $credential
+        
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -2597,7 +2597,7 @@ Function Get-WindowsUpdate {
                     $Timeout
                 )
                 $param.ScriptBlock = {
-					
+                    
                     # Set variables.
                     $VerbosePreference = $args[0]
                     $command = $args[1]
@@ -2633,7 +2633,7 @@ Function Get-WindowsUpdate {
                                     $IncludeHidden
                                 )
                                 ScriptBlock = {
-									
+                                    
                                     # Set variables.
                                     $VerbosePreference = $args[0]
                                     $command = $args[1]
@@ -2811,28 +2811,28 @@ Function Get-WindowsUpdateRun {
     <#
     .SYNOPSIS
         The Get-WindowsUpdateRun function gets outputted Install-WindowsUpdate "run" objects by reading the run xml files generated by the Install-WindowsUpdate function. The "run" objects are returned in a containter for convenience (See outputs below).
-		
-	.DESCRIPTION
+        
+    .DESCRIPTION
         The Get-WindowsUpdateRun function gets outputted Install-WindowsUpdate "run" objects by reading the run xml files generated by the Install-WindowsUpdate function. The "run" objects are returned in a containter for convenience (See outputs below).
-		
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER Id
         A variable used to group runs and query status information about them.
-		
+        
     .PARAMETER Version
         Currently not used. Could be used in the future to version the "run" objects if there are breaking changes to the formatting.
-		
+        
     .PARAMETER AsJob
         Runs the function as a job.
-		
+        
     .OUTPUTS
         Returns a "run" object container containing:
         -------------------------------------------------------------------------------
@@ -2841,9 +2841,9 @@ Function Get-WindowsUpdateRun {
         RunCount     : The number of run objects.
         Run          : Run objects.
         -------------------------------------------------------------------------------
-		
-	.EXAMPLE
-		Get-WindowsUpdateRun -ComputerName $computerName -Credential $credential -Id $id
+        
+    .EXAMPLE
+        Get-WindowsUpdateRun -ComputerName $computerName -Credential $credential -Id $id
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -3072,28 +3072,28 @@ Function Get-WindowsUpdateStatus {
     <#
     .SYNOPSIS
         The Get-WindowsUpdateStatus function returns a "status" object (See outputs below) which summarizes the most important properties of a run by parsing the "run" object retrieve from the Get-WindowsUpdateRun function.
-		
-	.DESCRIPTION
-		The Get-WindowsUpdateStatus function returns a "status" object (See outputs below) which summarizes the most important properties of a run by parsing the "run" object retrieve from the Get-WindowsUpdateRun function.
-		
+        
+    .DESCRIPTION
+        The Get-WindowsUpdateStatus function returns a "status" object (See outputs below) which summarizes the most important properties of a run by parsing the "run" object retrieve from the Get-WindowsUpdateRun function.
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER Id
         A variable used to group runs and query status information about them.
-		
+        
     .PARAMETER Version
         Currently not used. Could be used in the future to version the "run" objects if there are breaking changes to the formatting.
-		
+        
     .PARAMETER AsJob
         Runs the function as a job.
-		
+        
     .OUTPUTS
         Returns a "status" object containing:
         -------------------------------------------------------------------------------
@@ -3110,9 +3110,9 @@ Function Get-WindowsUpdateStatus {
         Installed    : The total number of updates installed across all runs.
         Message      : A status message about what the Install-WindowsUpdate function is currently doing. If an error occurs, it is displayed here as well.
         -------------------------------------------------------------------------------
-		
-	.EXAMPLE
-		Get-WindowsUpdateStatus -ComputerName $computerName -Credential $credential -Id $id
+        
+    .EXAMPLE
+        Get-WindowsUpdateStatus -ComputerName $computerName -Credential $credential -Id $id
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -3392,22 +3392,22 @@ Function Test-WindowsUpdateCompatible {
     <#
     .SYNOPSIS
         The Test-WindowsUpdateCompatible function tests if a computer is ready to use the Install-WindowsUpdate function and returns a "compatiblity" object (See outputs below).
-	
-	.DESCRIPTION
-		The Test-WindowsUpdateCompatible function tests if a computer is ready to use the Install-WindowsUpdate function and returns a "compatiblity" object (See outputs below).
-		
+    
+    .DESCRIPTION
+        The Test-WindowsUpdateCompatible function tests if a computer is ready to use the Install-WindowsUpdate function and returns a "compatiblity" object (See outputs below).
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER AsJob
-		Runs the function as a job.
-		
+        Runs the function as a job.
+        
     .OUTPUTS
         Returns a "compatiblity" object containing:
         -------------------------------------------------------------------------------
@@ -3421,9 +3421,9 @@ Function Test-WindowsUpdateCompatible {
         OSCompatible    : Contains $true if the system is running a compatible OS. Contains $false if it isn't.
         PSCompatible    : Contains $true if the system is running a compatible PowerShell version. Contains $false if it isn't.
         -------------------------------------------------------------------------------
-		
-	.EXAMPLE
-		Test-WindowsUpdateCompatible -ComputerName $computerName -Credential $credential
+        
+    .EXAMPLE
+        Test-WindowsUpdateCompatible -ComputerName $computerName -Credential $credential
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -3459,7 +3459,7 @@ Function Test-WindowsUpdateCompatible {
             ,$Session
         )
         $param.ScriptBlock = {
-			
+            
             # Set variables.
             $VerbosePreference = $args[0]
             $command = $args[1]
@@ -3852,27 +3852,27 @@ Function Disable-WindowsUpdate {
     <#
     .SYNOPSIS
         The Disable-WindowsUpdate function disables the Install-WindowsUpdates function from running on a system. If the Install-WindowsUpdates function is currently running, it is stopped after the current update is completed.
-		
-	.DESCRIPTION
-		The Disable-WindowsUpdate function disables the Install-WindowsUpdates function from running on a system. If the Install-WindowsUpdates function is currently running, it is stopped after the current update is completed.
-		
+        
+    .DESCRIPTION
+        The Disable-WindowsUpdate function disables the Install-WindowsUpdates function from running on a system. If the Install-WindowsUpdates function is currently running, it is stopped after the current update is completed.
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER AsJob
-		Runs the function as a job.
-		
-	.OUTPUTS
-		None.
-		
-	.EXAMPLE
-		Disable-WindowsUpdate -ComputerName $computerName -Credential $credential
+        Runs the function as a job.
+        
+    .OUTPUTS
+        None.
+        
+    .EXAMPLE
+        Disable-WindowsUpdate -ComputerName $computerName -Credential $credential
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -3969,27 +3969,27 @@ Function Enable-WindowsUpdate {
     <#
     .SYNOPSIS
         The Enable-WindowsUpdate function enables the Install-WindowsUpdates function if it was previously disabled on a system.
-		
-	.DESCRIPTION
-		The Enable-WindowsUpdate function enables the Install-WindowsUpdates function if it was previously disabled on a system.
-		
+        
+    .DESCRIPTION
+        The Enable-WindowsUpdate function enables the Install-WindowsUpdates function if it was previously disabled on a system.
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER AsJob
-		Runs the function as a job.
-		
-	.OUTPUTS
-		None.
-		
-	.EXAMPLE
-		Enable-WindowsUpdate -ComputerName $computerName -Credential $credential
+        Runs the function as a job.
+        
+    .OUTPUTS
+        None.
+        
+    .EXAMPLE
+        Enable-WindowsUpdate -ComputerName $computerName -Credential $credential
     #> 
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
@@ -4085,28 +4085,28 @@ Function Wait-WindowsUpdate {
     <#
     .SYNOPSIS
         The Wait-WindowsUpdate function waits for the Install-WindowsUpdates function to complete then returns a "wait" object (See outputs below).
-		
-	.DESCRIPTION
-		The Wait-WindowsUpdate function waits for the Install-WindowsUpdates function to complete then returns a "wait" object (See outputs below).
-		
+        
+    .DESCRIPTION
+        The Wait-WindowsUpdate function waits for the Install-WindowsUpdates function to complete then returns a "wait" object (See outputs below).
+        
     .PARAMETER ComputerName
         The computer(s) to execute the function on.
-		
+        
     .PARAMETER Credential
         The credentials to use to connect to the computer(s).
-		
+        
     .PARAMETER Session
         The session(s) to execute the function on.
-		
+        
     .PARAMETER Id
         A variable used to group runs and query status information about them.
-		
+        
     .PARAMETER Version
         Currently not used. Could be used in the future to version the "run" objects if there are breaking changes to the formatting.
-		
+        
     .PARAMETER AsJob
         Runs the function as a job.
-		
+        
     .OUTPUTS
         Returns a "wait" object containing:
         -------------------------------------------------------------------------------
@@ -4114,9 +4114,9 @@ Function Wait-WindowsUpdate {
         ComputerName : The computer name or IP address.
         Result       : Contains "Succeeded" if the Wait-WindowsUpdate function successfully waited for all updates to complete. Contains "Failed" if there was an error or the wait timed out.
         -------------------------------------------------------------------------------
-		
-	.EXAMPLE
-		Wait-WindowsUpdate -ComputerName $computerName -Credential $credential -Id $id
+        
+    .EXAMPLE
+        Wait-WindowsUpdate -ComputerName $computerName -Credential $credential -Id $id
     #>
     [CmdletBinding(DefaultParameterSetName='Computer')]
     param(
