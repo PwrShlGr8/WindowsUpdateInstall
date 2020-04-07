@@ -1,5 +1,5 @@
 # WindowsUpdateInstall
-My implementation of a windows update module.
+My implementation of a windows update module for installing windows updates on remote systems.
 
 I put a strong emphasis on simplicity, reporting, and backwards compatibility.
 
