@@ -567,7 +567,7 @@ Write-Progress -Activity "Waiting $secondsToWait seconds: ($secondsToWait of $se
                         # Run the output script.
                         if (!$UserLoggedIn -and $ShellType -eq 'Interactive') {
                             # Write-Verbose -Message "${command}: Restart computer and launch scheduled task '$scriptName'."
-                            Restart-Computer
+                            Restart-Computer -Force
 
                         } else {
                             # Write-Verbose -Message "${command}: Launch scheduled task '$scriptName'."
